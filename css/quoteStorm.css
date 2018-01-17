@@ -32,3 +32,17 @@ background: linear-gradient(to right, #F2C94C, #F2994A); /* W3C, IE 10+/ Edge, F
 h1{
   font-family: 'Open Sans', sans-serif;
 }
+
+
+.email-invalid{
+  color:red;
+  display:none;
+}
+
+.phone-invalid{
+  color:red;
+  display:none;
+}
+.input-invalid{
+  border-color:red;
+}
