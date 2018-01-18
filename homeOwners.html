@@ -27,29 +27,29 @@
 
       <div class="col-md-6">
 
-        <form ACTION="" METHOD="GET">
+        <form  METHOD="GET" id="qs-form">
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputFirstName">First Name</label>
-            <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" required="true" oninvalid="this.setCustomValidity('Please Enter Your First Name')">
+            <input type="text" data-formInfo="First_Name" name="First_Name" class="form-control formInfo" id="inputFirstName" placeholder="First Name" required="true" oninvalid="this.setCustomValidity('Please Enter Your First Name')">
           </div>
           <div class="form-group col-md-6">
             <label for="inputLastName">Last Name</label>
-            <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" required="true">
+            <input type="text" data-formInfo="Last_Name" name="Last_Name" class="form-control formInfo" id="inputLastName" placeholder="Last Name" required="true">
           </div>
         </div>
         <div class="form-group">
           <label for="inputAddress">Address</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required="true">
+          <input type="text" data-formInfo="Address"  name="Address" class="form-control formInfo" id="inputAddress" placeholder="1234 Main St" required="true">
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="inputCity" required="true">
+            <input type="text" data-formInfo="City"  name="City" class="form-control formInfo" id="inputCity" required="true">
           </div>
           <div class="form-group col-md-4">
             <label for="inputState">State</label>
-            <select id="inputState" class="form-control" required="true">
+            <select id="inputState" data-formInfo="State" name="State" class="form-control formInfo" required="true">
               <option selected>Choose...</option>
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
@@ -106,29 +106,92 @@
           </div>
           <div class="form-group col-md-2">
             <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" id="inputZip" required="true">
+            <input type="text" class="form-control formInfo"  name="Zip" data-formInfo="Zip" id="inputZip" required="true">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputPrimaryPhone">Primary Phone</label>
-            <input type="tel" class="form-control" id="inputPrimaryPhone" placeholder="Primary Phone" required="true">
+            <input type="tel" class="form-control formInfo" name="Primary_Phone"  data-formInfo="Primary_Phone" id="inputPrimaryPhone" placeholder="Primary Phone" required="true">
             <span class="phone-invalid">Invalid Phone Number</span>
           </div>
           <div class="form-group col-md-6">
             <label for="inputEmail">Email</label>
-            <input type="email" class="form-control" id="inputEmail" placeholder="Email" required="true">
+            <input type="email" class="form-control formInfo" name="Email"  data-formInfo="Email" id="inputEmail" placeholder="Email" required="true">
           <span class="email-invalid">Invalid Email Adress</span>
           </div>
         </div>
         <div class="form-group">
           <label for="inputAOR">Age of Roof</label>
-          <input type="number" class="form-control" id="inputAOR" placeholder="13" required="true">
+
+
+          <select id="inputAOR" data-formInfo="Age_Of_Roof"  name="Age_Of_Roof" class="form-control formInfo" required="true">
+            <option selected>Choose...</option>
+            <option value="1-5 years">1-5 years</option>
+            <option value="6-10 years">6-10 years</option>
+            <option value="11+ years">11+ years</option>
+          </select>
         </div>
 
-        <button type="submit" class="btn btn-primary btn-block quoteStormBlue">Get a Quote</button>
+
+          <!-- hidden form fields -->
+        <input type="hidden" name="" value="">
+
+        <input type="hidden" class="formInfo" name="DOB" value="09/16/1980">
+        <input type="hidden" class="formInfo" name="Gender" value="Male">
+        <input type="hidden" class="formInfo" name="New_Purchase" value="Yes">
+        <input type="hidden" class="formInfo" name="Exterior_Walls" value="Brick">
+        <input type="hidden" class="formInfo" name="Coverage_Needed_On_House" value="0">
+        <input type="hidden" class="formInfo" name="Coverage_Needed_On_Contents" value="0">
+        <input type="hidden" class="formInfo" name="Requested_Liability" value="$50,000">
+        <input type="hidden" class="formInfo" name="Requested_Deductible" value="$100">
+        <input type="hidden" class="formInfo" name="Credit" value="Fair">
+        <input type="hidden" class="formInfo" name="Number_Of_Claims" value="None">
+        <input type="hidden" class="formInfo" name="Currently_Insured" value="Yes">
+        <input type="hidden" class="formInfo" name="Service_Panel_Type" value="Other">
+        <input type="hidden" class="formInfo" name="Wiring_Type" value="Aluminum">
+        <input type="hidden" class="formInfo" name="Heat_Type" value="Unknown">
+        <input type="hidden" class="formInfo" name="Fireplaces" value="0">
+        <input type="hidden" class="formInfo" name="Garage_Type" value="Other">
+        <input type="hidden" class="formInfo" name="Construction_Type" value="N/A">
+        <input type="hidden" class="formInfo" name="Foundation_Type" value="Other">
+        <input type="hidden" class="formInfo" name="Fire_Station_Proximity" value="less than 5 miles">
+        <input type="hidden" class="formInfo" name="Fire_Hydrant_Proximity" value="less than 500 feet">
+        <input type="hidden" class="formInfo" name="Dwelling_Type" value="Other">
+        <input type="hidden" class="formInfo" name="Occupancy_Status" value="Primary Residence">
+        <input type="hidden" class="formInfo" name="Dog_Type" value="None">
+        <input type="hidden" class="formInfo" name="Square_Footage" value="2000">
+        <input type="hidden" class="formInfo" name="Stories" value="1">
+        <input type="hidden" class="formInfo" name="Bedrooms" value="1">
+        <input type="hidden" class="formInfo" name="Year_Built" value="10">
+        <input type="hidden" class="formInfo" name="Bathrooms" value="1">
+          <input type="hidden" class="formInfo" name="Home_Upgrades" value="Yes">
+
+
+        <button type="submit" id="submitBtn" class="btn btn-primary btn-block quoteStormBlue">Get a Quote</button>
+
       </form>
 
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"   data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+      <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>-->
+      </div>
+      <div class="modal-body">
+      Thank you, your request has been sent.
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-primary">Okay</button>
       </div>
     </div>
   </div>
