@@ -12,17 +12,66 @@ var form = {
       var pvalid = form.phoneValid;
       console.log(evalid);
     if(evalid && pvalid){
-      console.log('both valid');
+
+
+      //submit the bo
+      var key = "Baberboo key here";
+      var url= "https://leads.quotestorm.co/new_api/api.php?Key="+key+"&API_Action=submitLead&TYPE=21&Test_Lead=1&Format=JSON&SRC=test&Landing_Page=landing&IP_Address=75.2.92.149&Sub_ID=12&Pub_ID=12345&TCPAAgreed=Yes&Date_Time_Generated=1980-12-23_08:12:11&TCPAText=TCPAText";
+      $('.formInfo').each(function(){
+        var s = $(this).attr('name')
+
+        s = s.trim();
+
+
+        s = '&'+s + '='+$(this).val().trim();
+
+        url = url + s;
+      });
+
+      console.log(url);
+
+      console.log(url);
+
+
+
+      var xhr = createCORSRequest('GET', url);
+      if (!xhr) {
+        console.log('CORS not supported');
+        return;
+      }
+
+      // Response handlers.
+      var valid;
+      xhr.onload = function() {
+        var data = xhr.responseText;
+
+        //alert('Response from CORS request to ' + url + ' ');
+
+        data = JSON.parse(data);
+
+        //now veryify it is valid
+
+      console.log(data);
+
+        $('#confirmModal').modal('show');
+      };
+
+      xhr.onerror = function() {
+        console.log('Whoops, there was an errorsending the request.');
+      };
+
+      xhr.send();
     }else{
-        console.log('invalid');
+
     }
-  },2000);
+  },1000);
 
   },
 
   verifyEmail: function(){
     var email = $('#inputEmail').val();
-    var key= "KEY HERE";
+    console.log('email: ' + console.log(email));
+    var key= "email key";
     //https://bpi.briteverify.com/emails.json?address=johndoe@briteverify.com&apikey=<your-api-key
     var url = "https://bpi.briteverify.com/emails.json?address="+email+"&apikey="+key+"";
     var xhr = createCORSRequest('GET', url);
@@ -65,11 +114,14 @@ var form = {
 
   },
   verifyPhone: function(){
-    var phone =$('#inputPrimaryPhone').val();
+    var phone = $('#inputPrimaryPhone').val();
+    if(phone){
+        phone = phone.replaceAll("-","");
+    }
 
-    phone = phone.replaceAll("-","");
+
     console.log(phone);
-    var key= "KEY HERE";
+    var key= "phone key";
 
     var url = "https://api.realvalidation.com/rpvWebService/RealPhoneValidationTurbo.php?output=json&phone="+phone+"&token="+key+"";
     var xhr = createCORSRequest('GET', url);
@@ -144,27 +196,11 @@ function getTitle(text) {
   return text.match('<title>(.*)?</title>')[1];
 }
 
-// Make the actual CORS request.
-function makeCorsRequest() {
-  // This is a sample server that supports CORS.
-  var url = 'http://html5rocks-cors.s3-website-us-east-1.amazonaws.com/index.html';
 
-  var xhr = createCORSRequest('GET', url);
-  if (!xhr) {
-    alert('CORS not supported');
-    return;
-  }
 
-  // Response handlers.
-  xhr.onload = function() {
-    var text = xhr.responseText;
-    var title = getTitle(text);
-    alert('Response from CORS request to ' + url + ': ' + title);
-  };
+$('#submitBtn').click(function(e){
 
-  xhr.onerror = function() {
-    alert('Woops, there was an error making the request.');
-  };
+  form.verify();
 
-  xhr.send();
-}
+  return false;
+});
