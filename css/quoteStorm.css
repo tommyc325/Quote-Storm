@@ -22,7 +22,7 @@ background: linear-gradient(to right, #F2C94C, #F2994A); /* W3C, IE 10+/ Edge, F
 }
 
 .heroImage{
-  height: 100vh;
+  height: 100%;
   background-image:
   linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8)),
   url('../images/bgimage1.jpg');
@@ -33,7 +33,7 @@ h1{
   font-family: 'Open Sans', sans-serif;
 }
 
-.tcpaLanguage{
+.tcpaP{
   font-size: 7px;
 }
 
