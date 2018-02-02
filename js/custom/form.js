@@ -9,23 +9,8 @@ var form = {
     });
 
   },
-  test:function(){
-    var string ='';
-    $('.formInfo').each(function(){
-      var s = $(this).attr('name')
-
-      s = s.trim();
-
-
-      s = '&'+s + '='+$(this).val().trim();
-
-      string = string + s;
-    });
-    $.post( "php/send.php",{string:string}, function( data ) {
-      console.log(data);
-    });
-  },
   verify:function(){
+      $('#confirmModal').modal('show');
     form.verifyEmail();
 
     form.verifyPhone();
@@ -33,7 +18,7 @@ var form = {
     setTimeout(function(){
       var evalid = form.emailValid;
       var pvalid = form.phoneValid;
-      console.log(evalid);
+
     if(evalid && pvalid){
 
 
@@ -50,17 +35,19 @@ var form = {
       });
       $.post( "php/send.php",{string:string}, function( data ) {
         data = JSON.parse(data);
-
+        console.log(data);
         //now veryify it is valid
 
         console.log(data);
 
-        $('#confirmModal').modal('show');
+
+        $('#ok-btn').show();
+        $('.modal-body').html('Your request has been sent.');
 
       });
 
     }else{
-
+        $('#confirmModal').modal('hide');
     }
   },1000);
 

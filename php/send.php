@@ -16,11 +16,11 @@ else
     $ip_address = $_SERVER['REMOTE_ADDR'];
   }
 $key = 'VqwpVRSGu-dImRE9VPubV-GbE_LGm-abm-2iV_N9VtHIufmpmP2lcPDo';
-
+ $date = date('Y-m-d H:i:s');
 $url = "https://leads.quotestorm.co/new_api/api.php?Key=";
-
+$tcpatext="By clicking the Request a Quote button above, I understand that I may be contacted by Quote Storm, its affiliates, and captive and/or independent agents affiliated with one or more insurance companies, including, but not limited to State Farm and Allstate. I agree to receive calls about insurance products (which may be auto-dialed, use artificial or pre-recorded voice) from Quote Storm, its affiliates, captive and/or independent agents affiliated with one or more insurance companies, including, but not limited to State Farm and Allstate or their agents to the number I provided above. I understand that my consent to receive calls is not required as a condition to purchase any goods or services.";
 $string = $_POST['string'];
-$def = "&API_Action=submitLead&TYPE=21&Test_Lead=1&Format=JSON&SRC=test&Landing_Page=landing&IP_Address=".$ip_address."&Sub_ID=12&Pub_ID=12345&TCPAAgreed=Yes&Date_Time_Generated=1980-12-23_08:12:11&TCPAText=TCPAText";
+$def = "&API_Action=submitLead&TYPE=21&Format=JSON&SRC=test&Landing_Page=landing&IP_Address=".$ip_address."&Sub_ID=1&TCPAAgreed=Yes&Date_Time_Generated=".$date."&TCPAText=".$tcpatext;
 $url = $url.$key;
 
 
