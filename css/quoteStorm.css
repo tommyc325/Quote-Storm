@@ -33,6 +33,10 @@ h1{
   font-family: 'Open Sans', sans-serif;
 }
 
+.tcpaLanguage{
+  font-size: 7px;
+}
+
 
 .email-invalid{
   color:red;
