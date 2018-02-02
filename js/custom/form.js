@@ -33,14 +33,14 @@ var form = {
 
         string = string + s;
       });
-      $.post( "php/send.php",{string:string}, function( data ) {
+
+      if($('#tccheck').is(':checked') ){
+        tcch = 'Yes';
+      }else{
+        tcch = "No";
+      }
+      $.post( "php/send.php",{string:string,tc:tcch}, function( data ) {
         data = JSON.parse(data);
-        console.log(data);
-        //now veryify it is valid
-
-        console.log(data);
-
-
         $('#ok-btn').show();
         $('.modal-body').html('Your request has been sent.');
 

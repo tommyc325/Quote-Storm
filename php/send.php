@@ -20,7 +20,8 @@ $key = 'VqwpVRSGu-dImRE9VPubV-GbE_LGm-abm-2iV_N9VtHIufmpmP2lcPDo';
 $url = "https://leads.quotestorm.co/new_api/api.php?Key=";
 $tcpatext="By clicking the Request a Quote button above, I understand that I may be contacted by Quote Storm, its affiliates, and captive and/or independent agents affiliated with one or more insurance companies, including, but not limited to State Farm and Allstate. I agree to receive calls about insurance products (which may be auto-dialed, use artificial or pre-recorded voice) from Quote Storm, its affiliates, captive and/or independent agents affiliated with one or more insurance companies, including, but not limited to State Farm and Allstate or their agents to the number I provided above. I understand that my consent to receive calls is not required as a condition to purchase any goods or services.";
 $string = $_POST['string'];
-$def = "&API_Action=submitLead&TYPE=21&Format=JSON&SRC=test&Landing_Page=landing&IP_Address=".$ip_address."&Sub_ID=1&TCPAAgreed=Yes&Date_Time_Generated=".$date."&TCPAText=".$tcpatext;
+$tc = $_POST['tc'];
+$def = "&API_Action=submitLead&TYPE=21&Format=JSON&SRC=test&Landing_Page=landing&IP_Address=".$ip_address."&TCPAAgreed=".$tc."&Date_Time_Generated=".$date."&TCPAText=".$tcpatext;
 $url = $url.$key;
 
 
