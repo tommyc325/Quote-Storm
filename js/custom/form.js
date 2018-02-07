@@ -33,14 +33,20 @@ var form = {
 
         string = string + s;
       });
+      var atbi = '&Address_To_Be_Insured='+$('#inputAddress').val();
 
+
+      string = string +atbi;
+      console.log(string);
       if($('#tccheck').is(':checked') ){
         tcch = 'Yes';
       }else{
         tcch = "No";
       }
       $.post( "php/send.php",{string:string,tc:tcch}, function( data ) {
+        console.log(data);
         data = JSON.parse(data);
+        console.log(data);
         $('#ok-btn').show();
         $('.modal-body').html('Your request has been sent.');
 
@@ -112,7 +118,7 @@ var form = {
 
     });
 
-  }
+  },
 
 
 }
