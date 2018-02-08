@@ -36,9 +36,11 @@ h1{
 
 .tcpa{
   font-size: 10px;
-  margin-top: 20px;
 }
 
+.form-check{
+  margin-top: 10px;
+}
 
 .email-invalid{
   color:red;
