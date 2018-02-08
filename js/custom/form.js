@@ -19,7 +19,7 @@ var form = {
       var evalid = form.emailValid;
       var pvalid = form.phoneValid;
 
-    if(evalid && pvalid){
+    if(evalid == true && pvalid == true){
 
 
       var string ='';
@@ -34,9 +34,10 @@ var form = {
         string = string + s;
       });
       var atbi = '&Address_To_Be_Insured='+$('#inputAddress').val();
-
-
-      string = string +atbi;
+      var ztbi = '&Zip_To_Be_Insured='+$('#inputZip').val();
+      var ctbi = '&City_To_Be_Insured='+$('#inputCity').val();
+      var stbi = '&State_To_Be_Insured='+$('#inputState').val();
+      string = string +atbi + ztbi + ctbi + stbi;
       console.log(string);
       if($('#tccheck').is(':checked') ){
         tcch = 'Yes';
