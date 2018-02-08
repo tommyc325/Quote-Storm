@@ -13,6 +13,7 @@
 
 .quoteStormBlue{
   background-color: #156592;
+  margin-bottom: 2rem;
 }
 
 .orangeGradient{
@@ -33,8 +34,8 @@ h1{
   font-family: 'Open Sans', sans-serif;
 }
 
-.tcpaP{
-  font-size: 7px;
+.tcpa{
+  font-size: 10px;
 }
 
 
