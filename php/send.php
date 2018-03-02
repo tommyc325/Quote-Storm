@@ -22,6 +22,7 @@ $tcpatext="By clicking the Request a Quote button above, I understand that I may
 $string = $_POST['string'];
 $tc = $_POST['tc'];
 $def = "&API_Action=submitLead&TYPE=21&Format=JSON&SRC=test&Landing_Page=landing&IP_Address=".$ip_address."&TCPAAgreed=".$tc."&Date_Time_Generated=".$date."&TCPAText=".$tcpatext;
+//$def = "&API_Action=submitLead&Test_Lead=1&TYPE=21&Format=JSON&SRC=test&Landing_Page=landing&IP_Address=".$ip_address."&TCPAAgreed=".$tc."&Date_Time_Generated=".$date."&TCPAText=".$tcpatext;
 $url = $url.$key;
 
 

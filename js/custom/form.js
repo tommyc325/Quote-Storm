@@ -45,9 +45,10 @@ var form = {
         tcch = "No";
       }
       $.post( "php/send.php",{string:string,tc:tcch}, function( data ) {
-        console.log(data);
+
+
         data = JSON.parse(data);
-        console.log(data);
+
         $('#ok-btn').show();
         $('.modal-body').html('Your request has been sent.');
 
