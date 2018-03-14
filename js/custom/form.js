@@ -50,7 +50,7 @@ var form = {
         data = JSON.parse(data);
 
         $('#ok-btn').show();
-        $('.modal-body').html('Your request has been sent.');
+        $('.modal-body').html('Thank you for requesting a quote. An agent will be contacting you shortly.');
 
       });
 
