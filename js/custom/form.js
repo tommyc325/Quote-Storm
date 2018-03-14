@@ -22,7 +22,8 @@ var form = {
     if(evalid == true && pvalid == true){
 
 
-      var string ='';
+    var string ='';
+    var tcch = 'Yes';
       $('.formInfo').each(function(){
         var s = $(this).attr('name')
 
@@ -39,11 +40,9 @@ var form = {
       var stbi = '&State_To_Be_Insured='+$('#inputState').val();
       string = string +atbi + ztbi + ctbi + stbi;
       console.log(string);
-      if($('#tccheck').is(':checked') ){
+      
         tcch = 'Yes';
-      }else{
-        tcch = "No";
-      }
+
       $.post( "php/send.php",{string:string,tc:tcch}, function( data ) {
 
 
