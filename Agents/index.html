@@ -28,19 +28,19 @@
 
           <div class="form-group">
             <label for="reasonCode">Reason Code</label>
-            <select class="form-control" id="reasonCodeOptions">
-              <option>Above Daily Lead Quantity Limit</option>
-              <option>All Phone Numbers Provided are Disconnected</option>
-              <option>Did Not Request Quote</option>
-              <option>Duplicate Lead Received from Quote Storm in Last 45 Days</option>
-              <option>Duplicate Lead Received from Someone Else (Not Quote Storm) Today</option>
-              <option>Fake/Offensive Name (e.g. Donald Duck)</option>
-              <option>Incentivized Lead (e.g. Expects a gift card for quoting)</option>
-              <option>Insured with the Captive Carrier who Appointed You (Captive Agents Only)</option>
-              <option>Lead Form Data Does Not Match Filter (This is the FORM itself not matching)</option>
-              <option>Lead Form Data is Incorrect/Invalid (This is after you talk to the prospect)</option>
-              <option>Lead is Agent Testing the System</option>
-              <option>Prospect Not Associated with Phone Number</option>
+            <select class="form-control" id="reasonCodeOptions" onchange="handleform4(this.value);">
+              <option value="189">All Phone Numbers Provided are Disconnected</option>
+              <option value="191">Above Daily Lead Quantity Limit</option>
+              <option value="193">Did Not Request Quote</option>
+              <option value="195">Duplicate Lead Received from Quote Storm in Last 45 Days</option>
+              <option value="197">Duplicate Lead Received from Someone Else (Not Quote Storm) Today</option>
+              <option value="199">Fake/Offensive Name (e.g. Donald Duck)</option>
+              <option value="201">Incentivized Lead (e.g. Expects a gift card for quoting)</option>
+              <option value="203">Insured with the Captive Carrier who Appointed You (Captive Agents Only)</option>
+              <option value="205">Lead Form Data Does Not Match Filter (This is the FORM itself not matching)</option>
+              <option value="207" >Lead Form Data is Incorrect/Invalid (This is after you talk to the prospect)</option>
+              <option value="209" >Lead is Agent Testing the System</option>
+              <option value="211" >Prospect Not Associated with Phone Number</option>
             </select>
           </div>
 
@@ -51,7 +51,9 @@
             </select>
           </div>
 
+          <div id="form4">
 
+          </div>
           <!--
 
           !!!KURT!!!
@@ -191,13 +193,17 @@
               </div> -->
 
           <div class="form-group">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <a onclick="form.submit();" style="color:white;" class="btn btn-primary">Submit</a>
           </div>
 
 
       </div>
     </div>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="js/formbuilder.js"></script>
+        <script src="js/form.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </body>
 
 </html>
