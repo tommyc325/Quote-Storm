@@ -12,6 +12,8 @@ form.submit = function(){
   },1000);
 };
 form.requestRefundforLead = function(){
+
+
   var infostring = '';
   var reasonid = $('#reasonCodeOptions').val();
   infostring = infostring + '&Reason_ID='+reasonid;
@@ -51,10 +53,15 @@ var leadid = $('#leadId').val();
       data = JSON.parse(data);
 
 
-    var partner_id = data.response.leads.lead[0].matched_partners.matched_partner[0].partner_id;
-//  console.log(partner_id);
 
-form.partner_id = partner_id;
+if(data.response.leads){
+  var partner_id = data.response.leads.lead[0].matched_partners.matched_partner[0].partner_id;
+//  console.log(partner_id);
+  form.partner_id = partner_id;
+}else{
+    $('#leadId').addClass('input-invalid')
+}
+
 });
 
 
@@ -63,6 +70,19 @@ form.partner_id = partner_id;
 
 
 form.validate = function(){
+  var valid = true;
+  $('.validate-req').each(function(){
+        $(this).removeClass('input-invalid');
+    if($(this).val()){
 
+    }else{
+      valid = false;
+      $(this).addClass('input-invalid');
+    }
+  });
+
+if(valid){
+  form.submit();
+}
 
 };

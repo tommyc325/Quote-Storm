@@ -23,12 +23,12 @@
         <form>
           <div class="form-group">
             <label for="leadId">Lead ID</label>
-            <input type="text" class="form-control" id="leadId" placeholder="Enter your personal Lead ID">
+            <input type="number" class="form-control validate-req" id="leadId" placeholder="Enter your personal Lead ID">
           </div>
 
           <div class="form-group">
             <label for="reasonCode">Reason Code</label>
-            <select class="form-control" id="reasonCodeOptions" onchange="handleform4(this.value);">
+            <select class="form-control validate-req" id="reasonCodeOptions" onchange="handleform4(this.value);">
               <option value="189">All Phone Numbers Provided are Disconnected</option>
               <option value="191">Above Daily Lead Quantity Limit</option>
               <option value="193">Did Not Request Quote</option>
@@ -46,7 +46,7 @@
 
           <div class="form-group">
             <label for="leadType">Lead Type</label>
-            <select class="form-control" id="leadTypeOptions">
+            <select class="form-control validate-req" id="leadTypeOptions">
               <option>Auto</option>
             </select>
           </div>
@@ -193,7 +193,7 @@
               </div> -->
 
           <div class="form-group">
-            <a onclick="form.submit();" style="color:white;" class="btn btn-primary">Submit</a>
+            <a onclick="form.validate();" style="color:white;" class="btn btn-primary">Submit</a>
           </div>
 
 
