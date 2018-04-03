@@ -59,7 +59,7 @@ var form4info = [
 {
   "case":203,
   "f2value":"Insured with the Captive Carrier who Appointed You (Captive Agents Onl",
-  "formhtml":'<div class="form-group"> <label for="leadId">Please provide the Captive Carrier and Agent (if known)</label> <textarea class="form-control  comment-data validate-req" id="describeIncentive" maxlength="500" rows="3"></textarea> </div>',
+  "formhtml":'<div class="form-group"> <label for="leadId">Please provide the Captive Carrier and Agent (if known)</label> <textarea class="form-control  comment-data " id="describeIncentive" maxlength="500" rows="3"></textarea> </div>',
   "info_needed":"Please provide the Captive Carrier and Agent (if known)"
 },
 {

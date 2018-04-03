@@ -11,7 +11,7 @@ $partnerid = $_POST['partnerid'];
 $infostring = $_POST['infostring'];
 $url = $url.'&Lead_ID='.$leadid.'&Lead_Type=23&Partner_ID='.$partnerid.$infostring;
 
-echo $url;
+
 
 // Get cURL resource
 $curl = curl_init();
