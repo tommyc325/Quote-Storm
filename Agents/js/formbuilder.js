@@ -17,13 +17,13 @@ var form4info = [
 {
   "case":189,
   "f2value":"Above Daily Lead Quantity Limit",
-  "form_html":'<div class="alert alert-warning">Lead must be submitted within 1 (one) business hour of receipt for refund approval.</div>',
+  "formhtml":'<div class="alert alert-warning">Lead must be submitted within 1 (one) business hour of receipt for refund approval.</div>',
   "info_needed":"No further information required"
 },
 {
   "case":191,
   "f2value":"All Phone Numbers Provided are Disconnected",
-  "form_html":'<div class="alert alert-warning">Lead must be submitted within 1 (one) business hour of receipt for refund approval.</div>',
+  "formhtml":'<div class="alert alert-warning">Lead must be submitted within 1 (one) business hour of receipt for refund approval.</div>',
   "info_needed":"No further information required"
 },
 {
