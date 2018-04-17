@@ -17,13 +17,13 @@ var form4info = [
 {
   "case":189,
   "f2value":"Above Daily Lead Quantity Limit",
-  "form_html":" ",
+  "form_html":'<div class="alert alert-warning">Lead must be submitted within 1 (one) business hour of receipt for refund approval.</div>',
   "info_needed":"No further information required"
 },
 {
   "case":191,
   "f2value":"All Phone Numbers Provided are Disconnected",
-  "formhtml":' ',
+  "form_html":'<div class="alert alert-warning">Lead must be submitted within 1 (one) business hour of receipt for refund approval.</div>',
   "info_needed":"No further information required"
 },
 {
@@ -35,7 +35,7 @@ var form4info = [
 {
   "case":195,
   "f2value":"Duplicate Lead Received from Quote Storm in Last 45 Days",
-  "formhtml":'<div class="form-group"> <label for="provideDateTime">Please provide the date and time of receipt.</label> <div class="row"> <div class="col"> <input type="text" class="form-control  comment-data validate-req" id="date" placeholder="Date - mm/dd/yy"> </div><div class="col"> <input type="text" class="form-control" id="date" placeholder="Time - hh:mm am/pm"> </div></div></div>',
+  "formhtml":'<div class="alert alert-warning">Lead must be submitted within 40 (forty) business hours for refund approval. Please answer the additional questions below.</div><div class="form-group"> <label for="provideDateTime">Please provide the date and time of receipt.</label> <div class="row"> <div class="col"> <input type="text" class="form-control  comment-data validate-req" id="date" placeholder="Date - mm/dd/yy"> </div><div class="col"> <input type="text" class="form-control" id="date" placeholder="Time - hh:mm am/pm"> </div></div></div>',
   "info_needed":"Please provide the date and time of receipt"
 },
 {
