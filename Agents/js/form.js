@@ -4,17 +4,20 @@ lead_id:undefined,
 
 
 };
-
+var pidint;
 form.submit = function(){
   form.partner_id = undefined;
   form.lead_id = undefined;
           $('#confirmModal').modal('show');
   form.getPartnerID();
-  setTimeout(function(){
+
+  pidint = setInterval(function(){
+
     if(form.partner_id){
     form.requestRefundforLead();
-  }
-  },1000);
+    clearInterval(pidint);
+    }
+  },200);
 };
 form.requestRefundforLead = function(){
 
@@ -64,7 +67,7 @@ var leadid = $('#leadId').val();
 
     data = JSON.parse(data);
     data = JSON.parse(data);
-
+    console.log(data);
     if(data.response.leads){
       var partner_id = data.response.leads.lead[0].matched_partners.matched_partner[0].partner_id;
     //  console.log(partner_id);
