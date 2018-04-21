@@ -29,10 +29,11 @@ form.requestRefundforLead = function(){
 
   $('.comment-data').each(function(){
 
-      comment = comment + ' '+ $(this).val();
+      comment = comment + ' '+ $(this).val().replaceAll(' ','%20');
   });
   comment = comment.trim();
   infostring = infostring + '&Comment='+comment;
+  console.log(infostring);
   $.post( "php/requestRefundForLead.php",{leadid:form.lead_id,partnerid:form.partner_id,infostring:infostring}, function( data ) {
     console.log(data);
 
@@ -40,7 +41,7 @@ form.requestRefundforLead = function(){
 
       data = JSON.parse(data);
 
-        if(data.response.errors.error[0]){
+        if(data.response.errors && data.response.errors.error[0]){
           $('#ok-btn').show();
           $('#confirmModalLabel').text('Refund Already Requested');
           $('.modal-body').html(data.response.errors.error[0]);
@@ -114,6 +115,11 @@ if(valid){
   form.submit();
 }
 
+};
+
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
 };
 
 
