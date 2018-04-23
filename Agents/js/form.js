@@ -34,7 +34,7 @@ form.requestRefundforLead = function(){
   comment = comment.trim();
   infostring = infostring + '&Comment='+comment;
   console.log(infostring);
-  $.post( "php/requestRefundforLead.php",{leadid:form.lead_id,partnerid:form.partner_id,infostring:infostring}, function( data ) {
+  $.post( "php/requestRefundForLead.php",{leadid:form.lead_id,partnerid:form.partner_id,infostring:infostring}, function( data ) {
     console.log(data);
 
     data = JSON.parse(data);
