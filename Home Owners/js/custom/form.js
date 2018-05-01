@@ -1,3 +1,4 @@
+var pidint;
 var form = {
   /* TEST COMMIT*/
   emailValid:undefined,
@@ -11,52 +12,55 @@ var form = {
   },
   verify:function(){
       $('#confirmModal').modal('show');
+    form.emailValid = undefined;
+    form.phoneValid = undefined;
     form.verifyEmail();
-
     form.verifyPhone();
 
-    setTimeout(function(){
+    pidint = setInterval(function(){
       var evalid = form.emailValid;
       var pvalid = form.phoneValid;
+      if(evalid && valid){
+        clearInterval(pidint);
+        if(evalid == true && pvalid == true){
+            var string ='';
+            var tcch = 'Yes';
+              $('.formInfo').each(function(){
+                var s = $(this).attr('name')
 
-    if(evalid == true && pvalid == true){
-
-
-    var string ='';
-    var tcch = 'Yes';
-      $('.formInfo').each(function(){
-        var s = $(this).attr('name')
-
-        s = s.trim();
-
-
-        s = '&'+s + '='+$(this).val().trim();
-
-        string = string + s;
-      });
-      var atbi = '&Address_To_Be_Insured='+$('#inputAddress').val();
-      var ztbi = '&Zip_To_Be_Insured='+$('#inputZip').val();
-      var ctbi = '&City_To_Be_Insured='+$('#inputCity').val();
-      var stbi = '&State_To_Be_Insured='+$('#inputState').val();
-      string = string +atbi + ztbi + ctbi + stbi;
-      console.log(string);
-
-        tcch = 'Yes';
-
-      $.post( "php/send.php",{string:string,tc:tcch}, function( data ) {
+                s = s.trim();
 
 
-        data = JSON.parse(data);
+                s = '&'+s + '='+$(this).val().trim();
 
-        $('#ok-btn').show();
-        $('.modal-body').html('Thank you for requesting a quote. An agent will be contacting you shortly.');
-        $('.iframes-container').append('<iframe src="https:////www.quotelab.com/p/tWIosCECFm2Uq5dXbC5kPHR--T4yWQ?u=2" width="1" height="1" frameborder="0"></iframe>');
-      });
+                string = string + s;
+              });
+              var atbi = '&Address_To_Be_Insured='+$('#inputAddress').val();
+              var ztbi = '&Zip_To_Be_Insured='+$('#inputZip').val();
+              var ctbi = '&City_To_Be_Insured='+$('#inputCity').val();
+              var stbi = '&State_To_Be_Insured='+$('#inputState').val();
+              string = string +atbi + ztbi + ctbi + stbi;
+              console.log(string);
 
+                tcch = 'Yes';
+
+              $.post( "php/send.php",{string:string,tc:tcch}, function( data ) {
+
+
+                data = JSON.parse(data);
+
+                $('#ok-btn').show();
+                $('.modal-body').html('Thank you for requesting a quote. An agent will be contacting you shortly.');
+                $('.iframes-container').append('<iframe src="https:////www.quotelab.com/p/tWIosCECFm2Uq5dXbC5kPHR--T4yWQ?u=2" width="1" height="1" frameborder="0"></iframe>');
+              });
+
+        }else{
+            $('#confirmModal').modal('hide');
+        }
     }else{
-        $('#confirmModal').modal('hide');
+
     }
-  },1000);
+  },200);
 
   },
 
