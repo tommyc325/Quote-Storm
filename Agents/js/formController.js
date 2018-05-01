@@ -28,10 +28,14 @@ form.requestRefundforLead = function(){
   var comment = '';
 
   $('.comment-data').each(function(){
-
-      comment = comment + ' '+ $(this).val().replaceAll(' ','%20');
+      var d = $(this).val().replaceAll(' ','%20');
+          d = d.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '');
+      comment = comment + '|'+d;
   });
   comment = comment.trim();
+  comment = comment.replace('|','');
+
+  console.log(comment);
   infostring = infostring + '&Comment='+comment;
   console.log(infostring);
   $.post( "php/requestRefundForLead.php",{leadid:form.lead_id,partnerid:form.partner_id,infostring:infostring}, function( data ) {
@@ -42,11 +46,12 @@ form.requestRefundforLead = function(){
       data = JSON.parse(data);
 
         if(data.response.errors && data.response.errors.error[0]){
+              $('#cm-btn').hide();
           $('#ok-btn').show();
           $('#confirmModalLabel').text('Refund Already Requested');
           $('.modal-body').html(data.response.errors.error[0]);
         }else{
-
+              $('#cm-btn').hide();
           $('#ok-btn').show();
             $('#confirmModalLabel').text('Refund Requested');
           $('.modal-body').html('Your refund has been requested.');
@@ -78,6 +83,7 @@ var leadid = $('#leadId').val();
         $('#leadId').addClass('input-invalid')
 
         $('#cm-btn').show();
+        $('#ok-btn').hide();
         $('#confirmModalLabel').text('Invalid Lead Id');
         $('.modal-body').html('The Lead Id you submitted was invalid.');
     }
@@ -85,6 +91,7 @@ var leadid = $('#leadId').val();
     $('#leadId').addClass('input-invalid')
 
     $('#cm-btn').show();
+    $('#ok-btn').hide();
     $('#confirmModalLabel').text('Invalid Lead Id');
     $('.modal-body').html('The Lead Id you submitted was invalid.');
   }
