@@ -20,7 +20,7 @@ var form = {
     pidint = setInterval(function(){
       var evalid = form.emailValid;
       var pvalid = form.phoneValid;
-      if(evalid && valid){
+      if(evalid && pvalid){
         clearInterval(pidint);
         if(evalid == true && pvalid == true){
             var string ='';
